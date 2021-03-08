@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Generator | Manzer Alam</title>
+    <script src= 
+"https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> 
+    </script> 
+    <link rel="stylesheet" href="styles/color-converter.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <ul id="navigation" >
+            <li id="logo">TG</li>
+        </ul>
+    </nav>
+    <main>
+        <article class="conversion-block">
+            <div class="color-box flexible-box" id="color-box">
+                <h2 id="hex-code-output">#EDEDED</h2>
+            </div>
+            <div class="color-values-box flexible-box">
+                <h1 id="block-title">Color Converter</h1>
+                <h3 id="made-by">By Md Manzer Alam</h3>
+                <div class="get-color-values">
+                    <h2 id="enter-color">Enter color: </h2>
+                    <div class="color-inputs">
+                        <div class="hex-block color-code-block">
+                            <label for="hex-input">HEX</label>
+                            <div class="input-wrapper">
+                                <h2>#</h2>
+                                <input type="text" name="hex-value" id="hex-input">
+                            </div>
+                        </div>
+                        <div class="rgb-block color-code-block">
+                            <label for="rgb-input">RGB</label>
+                            <div class="input-wrapper">
+                                <h2>R</h2>
+                                <input type="text" name="r-value" id="r-input">
+                            </div>
+                            <div class="input-wrapper">
+                                <h2>G</h2>
+                                <input type="text" name="g-value" id="g-input">
+                            </div>
+                            <div class="input-wrapper">
+                                <h2>B</h2>
+                                <input type="text" name="b-value" id="b-input">
+                            </div>
+                            
+                        </div>
+                        <div class="hsl-block color-code-block">
+                            <label for="hsl-input">HSL</label>
+                            <div class="input-wrapper">
+                                <h2>H</h2>
+                                <input type="text" name="h-value" id="h-input">
+                            </div>
+                            <div class="input-wrapper">
+                                <h2>S</h2>
+                                <input type="text" name="s-value" id="s-input">
+                            </div>
+                            <div class="input-wrapper">
+                                <h2>L</h2>
+                                <input type="text" name="l-value" id="l-input">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <h2>&copy;Made by Md Manzer Alam aka <a href="https://github.com/sherlock6147/"> Sherlock6147</a></h2>
+    </footer>
+
+</body>
+<script src="js/color.js"></script>
+<script src="js/color-converter.js"></script>
+</html>

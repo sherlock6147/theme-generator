@@ -1,0 +1,101 @@
+@import 'fonts';
+@import 'colors';
+.conversion-block{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    .flexible-box{
+        flex: 1;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: $block-bg;
+        min-width: 400px;
+        text-align: center;
+    }
+    .color-box{
+        display: flex;
+        min-height: 250px;
+        // justify-content: center;
+        // flex-direction: column;
+        #hex-code-output{
+            margin: auto;
+            padding: 7px;
+            border-radius: 100px;
+            font-family: $body;
+            font-weight: 600;
+            font-size: 1.2rem;
+            background-color: $main-bg;
+            color: $font-gray;
+            align-self: center;
+        }
+    }
+    .color-values-box{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 50px;
+        #block-title{
+            font-family: $heading;
+            font-size: 2rem;
+            color: $font-black;
+            text-align:center;
+            font-weight: 700;
+        }
+        #made-by{
+            font-weight: 700;
+            font-size: 1.2rem;
+            font-family: $body;
+            text-align: center;
+            color: $font-gray;
+        }
+        .get-color-values{
+            font-family: $body;
+            h2{
+                color: $font-gray;
+            }
+            #enter-color{
+                color: $font-black;
+
+            }
+            .color-inputs{
+                .color-code-block{
+                    display: flex;
+                    // flex-wrap: wrap;
+                    padding-right: 20%;
+                    margin: 10px 0px;
+                    justify-content: flex-start;
+                    label{
+                        flex: 0;
+                        min-width: 5ch;
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                        padding-right: 1ch;
+                    }
+                    .input-wrapper{
+                        flex: 1;
+                        text-align: left;
+                        align-self: center;
+                        display: flex;
+                        h2{
+                            flex: 0;
+                            padding-right: 1ch;
+                        }
+                        input{
+                            flex: 1;
+                            width: 60px;
+                            padding: 5px;
+                            font-size: 1rem;
+                            font-family: $body;
+                        }
+                        padding: 0px 5px;
+                        #hex-input{
+                            width: 150px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

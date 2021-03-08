@@ -1,0 +1,19 @@
+@import 'fonts';
+@import 'colors';
+footer{
+    background-color: $theme-blue;
+    width: 100vw;
+    padding: 15px 20vw;
+    text-align: center;
+    color: $main-bg;
+    h2{
+        font-size: 1rem;
+    }
+    a{
+        text-decoration: none;
+        color: inherit;
+        font-size: 1rem;
+        text-align: center;
+        font-weight: 400;
+    }
+}

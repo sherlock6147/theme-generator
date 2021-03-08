@@ -1,0 +1,16 @@
+@import 'colors';
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main{
+    padding: 10px 10vw;
+}
+input {
+    border: none;
+    outline: $theme-blue;
+    padding: 5px;
+    font-size: 1.6rem;
+    border-radius: 10px;
+}
