@@ -8,7 +8,10 @@ class Color{
         this.h = 0;
         this.s = 0;
         this.l = 94;
-        console.log(this.r,this.g,this.b);
+        this.shadeLValues = new Set();
+        this.backgroundL = 10;
+        this.textColorL = 98;
+        
     }
     rgbToHsl() {
         let r = this.r, g = this.g, b = this.b;
@@ -43,14 +46,13 @@ class Color{
         this.h = h;
         this.s = s;
         this.l = l;
-        console.log(this.h, this.s, this.l);
     }
     updateFromHex() {
         this.r = parseInt(this.hex[1] + this.hex[2], 16);
         this.g = parseInt(this.hex[3] + this.hex[4], 16);
         this.b = parseInt(this.hex[5] + this.hex[6], 16);
-        console.log(this.r,this.g,this.b);
         this.rgbToHsl();
+        this.generateShades();
     }
     rgbToHex() {
         let r = 0, g = 0, b = 0;
@@ -100,9 +102,28 @@ class Color{
     updateFromRGB() {
         this.rgbToHex();
         this.rgbToHsl();
+        this.generateShades();
     }
     updateFromHSL() {
         this.hslToRgb();
         this.rgbToHex();
+        this.generateShades();
+    }
+    getRGBOut() {
+        return "rgb(" + this.r.toString() + "," + this.g.toString() + "," + this.b.toString() + ")";
+    }
+    getHSLOut() {
+        return "hsl(" + this.h.toString() + "," + this.s.toString() + "," + this.l.toString() + ")";
+    }
+    generateShades() {
+        this.shadeLValues.clear();
+        let tempL = this.l%10;
+        while (tempL <= 100) {
+            tempL += 10;
+            if (tempL <= 100) {
+                this.shadeLValues.add(tempL);    
+            }
+        }
+
     }
 }

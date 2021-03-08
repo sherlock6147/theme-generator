@@ -82,6 +82,7 @@ function hslFieldChanged() {
 $('#hex-input').on('input', function (e) {
     hexFieldChanged();
 });
+// RGB part
 $('#r-input').on('input', function (e) {
     if (rInput.value != "" || gInput.value != "" || bInput.value != "") {
         if (parseInt(rInput.value) < 256 && parseInt(gInput.value) < 256 && parseInt(bInput.value) < 256) {
@@ -103,6 +104,7 @@ $('#b-input').on('input', function (e) {
         }
     }    
 });
+// HSL
 $('#h-input').on('input', function (e) {
     if (hInput.value != "" || sInput.value != "" || lInput.value != "") {
         if (parseInt(hInput.value) >0 && parseInt(sInput.value) > 0 && parseInt(lInput.value) >0) {
