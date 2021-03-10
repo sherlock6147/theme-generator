@@ -29,7 +29,7 @@ input {
   width: 100vw;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  padding: 15px 20vw;
+  padding: 5px 20vw;
 }
 
 .top-nav #navigation li {
@@ -81,11 +81,13 @@ footer {
 
 footer h2 {
   font-size: 1rem;
+  font-family: "Quicksand";
 }
 
 footer a {
   text-decoration: none;
   color: inherit;
+  font-family: "Quicksand";
   font-size: 1rem;
   text-align: center;
   font-weight: 400;

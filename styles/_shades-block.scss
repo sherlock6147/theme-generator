@@ -1,0 +1,15 @@
+@import 'fonts';
+.shades-block{
+    text-align: center;
+    font-family: $body;
+    h2{
+        font-family: $body;
+    }
+}
+.shade-wrapper{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}

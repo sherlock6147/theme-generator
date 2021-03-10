@@ -8,10 +8,12 @@ footer{
     color: $main-bg;
     h2{
         font-size: 1rem;
+        font-family: $body;
     }
     a{
         text-decoration: none;
         color: inherit;
+        font-family: $body;
         font-size: 1rem;
         text-align: center;
         font-weight: 400;

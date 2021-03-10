@@ -8,10 +8,16 @@ class Color{
         this.h = 0;
         this.s = 0;
         this.l = 94;
-        this.shadeLValues = new Set();
+        this.shades = new Set();
         this.backgroundL = 10;
         this.textColorL = 98;
-        
+    }
+    setupColor(hex) {
+        this.hex = hex;
+        this.r = parseInt(this.hex[1] + this.hex[2], 16);
+        this.g = parseInt(this.hex[3] + this.hex[4], 16);
+        this.b = parseInt(this.hex[5] + this.hex[6], 16);
+        this.rgbToHsl();
     }
     rgbToHsl() {
         let r = this.r, g = this.g, b = this.b;
@@ -116,14 +122,23 @@ class Color{
         return "hsl(" + this.h.toString() + "," + this.s.toString() + "," + this.l.toString() + ")";
     }
     generateShades() {
-        this.shadeLValues.clear();
+        this.shades.clear();
         let tempL = this.l%10;
         while (tempL <= 100) {
             tempL += 10;
             if (tempL <= 100) {
-                this.shadeLValues.add(tempL);    
+                var shade = new Shades(this.h, this.s, tempL);
+                this.shades.add(shade);    
             }
         }
 
+    }
+    get bgColor() {
+        var temp = new Shades(this.h, this.s, this.backgroundL);
+        return temp;
+    }
+    get textColor() {
+        var temp = new Shades(this.h, this.s, this.textColorL);
+        return temp;
     }
 }

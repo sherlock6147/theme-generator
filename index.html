@@ -13,16 +13,103 @@
 <body>
     <nav class="top-nav">
         <ul id="navigation">
-            <li id="logo">TG</li>
+            <li id="logo"><a href="color-converter.html">TG</a></li>
         </ul>
     </nav>
     <main>
-    <section class="primary-color">
-        
+    <section class="primary-color conversion-block">
+        <div class="color-box flexible-box" id="color-box">
+            <h2 id="hex-code-output">#EDEDED</h2>
+        </div>
+        <div class="color-values-box flexible-box">
+            <h1 id="block-title">Enter Primary Color</h1>
+            <h3 id="made-by">By Md Manzer Alam</h3>
+            <div class="get-color-values">
+                <h2 id="enter-color">Enter color: </h2>
+                <div class="color-inputs">
+                    <div class="hex-block color-code-block">
+                        <label for="hex-input">HEX</label>
+                        <div class="input-wrapper">
+                            <h2>#</h2>
+                            <input type="text" name="hex-value" id="hex-input">
+                        </div>
+                    </div>
+                    <div class="rgb-block color-code-block">
+                        <label for="rgb-input">RGB</label>
+                        <div class="input-wrapper">
+                            <h2>R</h2>
+                            <input type="text" name="r-value" id="r-input">
+                        </div>
+                        <div class="input-wrapper">
+                            <h2>G</h2>
+                            <input type="text" name="g-value" id="g-input">
+                        </div>
+                        <div class="input-wrapper">
+                            <h2>B</h2>
+                            <input type="text" name="b-value" id="b-input">
+                        </div>
+                        
+                    </div>
+                    <div class="hsl-block color-code-block">
+                        <label for="hsl-input">HSL</label>
+                        <div class="input-wrapper">
+                            <h2>H</h2>
+                            <input type="text" name="h-value" id="h-input">
+                        </div>
+                        <div class="input-wrapper">
+                            <h2>S</h2>
+                            <input type="text" name="s-value" id="s-input">
+                        </div>
+                        <div class="input-wrapper">
+                            <h2>L</h2>
+                            <input type="text" name="l-value" id="l-input">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="shades-block">
+        <h2>Primary Shades:</h2>
+        <div class="shade-wrapper" id="primary-shade-block">
+            Enter primary color
+            <!-- <button class="shade-btn" onclick="onClickShade(this)">
+                <p class="shade-value"></p>
+            </button> -->
+        </div>
+    </section>
+    <section class="alert-block">
+        <h2>Choose Alert Colors</h2>
+        <div class="red-colors">
+            <div class="shade-wrapper" id="primary-shade-block">
+                Enter primary color
+                <!-- <button class="shade-btn" onclick="onClickShade(this)">
+                    <p class="shade-value"></p>
+                </button> -->
+        </div>
+        <div class="green-colors">
+            <div class="shade-wrapper" id="primary-shade-block">
+                Enter primary color
+                <!-- <button class="shade-btn" onclick="onClickShade(this)">
+                    <p class="shade-value"></p>
+                </button> -->
+        </div>
+        <div class="orange-colors">
+            <div class="shade-wrapper" id="primary-shade-block">
+                Enter primary color
+                <!-- <button class="shade-btn" onclick="onClickShade(this)">
+                    <p class="shade-value"></p>
+                </button> -->
+        </div>
     </section>
     </main>
     <footer>
         <h2>&copy;Made by Md Manzer Alam aka <a href="https://github.com/sherlock6147/"> Sherlock6147</a></h2>
     </footer>
 </body>
+<script src="js/shades.js"></script>
+<script src="js/color.js"></script>
+<script src="js/user.js"></script>
+<script src="js/main.js"></script>
 </html>
