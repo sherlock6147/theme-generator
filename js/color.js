@@ -141,4 +141,22 @@ class Color{
         var temp = new Shades(this.h, this.s, this.textColorL);
         return temp;
     }
+    generateShadesForAlert() {
+        this.shades.clear();
+        let tempL = 3,count=0;
+        while (count <=5) {
+            if (this.l - tempL > 0) {
+                var newShade = new Shades(this.h, this.s, this.l-tempL);
+                this.shades.add(newShade);
+                ++count;
+                tempL += 3;
+            }
+            if (this.l + tempL < 100) {
+                var newShade = new Shades(this.h, this.s, this.l+tempL);
+                this.shades.add(newShade);
+                ++count;
+                tempL += 3;
+            }
+        }
+    }
 }

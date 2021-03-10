@@ -4,7 +4,8 @@ class User{
         this.selectedShades = new Set();
         this.selectedShadesHex = [];
         this.selectedAlertColors = new Set();
-        this.selectedTextColor = new Color();
-        this.selectedBgColors = new Color();
+        this.selectedAlertColorsHex = [];
+        this.selectedTextColor = new Shades(0,0,0);
+        this.selectedBgColors = new Shades(0,0,0);
     }
 }

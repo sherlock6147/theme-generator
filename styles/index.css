@@ -2,6 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Quicksand:wght@400;600;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -278,6 +280,23 @@ footer a {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  text-align: center;
+}
+
+.alert-block {
+  font-family: "Quicksand";
+}
+
+.alert-block h2 {
+  text-align: center;
+}
+
+.alert-color-block {
+  margin: auto;
+}
+
+.text-bg-colors h2 {
+  font-family: "Quicksand";
   text-align: center;
 }
 /*# sourceMappingURL=index.css.map */
