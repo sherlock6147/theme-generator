@@ -107,6 +107,7 @@ $('#hex-input').on('input', function (e) {
     hexFieldChanged();
     user.primaryColor = primaryColor;
     clearSelected();
+    updateResult();
 });
 // RGB part
 $('#r-input').on('input', function (e) {
@@ -115,6 +116,7 @@ $('#r-input').on('input', function (e) {
             rgbFieldChanged();
             user.primaryColor = primaryColor;
             clearSelected();
+            updateResult();
         }
     }    
 });
@@ -124,6 +126,7 @@ $('#g-input').on('input', function (e) {
             rgbFieldChanged();
             user.primaryColor = primaryColor;
             clearSelected();
+            updateResult();
         }
     }    
 });
@@ -133,6 +136,7 @@ $('#b-input').on('input', function (e) {
             rgbFieldChanged();
             user.primaryColor = primaryColor;
             clearSelected();
+            updateResult();
         }
     }    
 });
@@ -143,6 +147,7 @@ $('#h-input').on('input', function (e) {
             hslFieldChanged();
             user.primaryColor = primaryColor;
             clearSelected();
+            updateResult();
         }
     }    
 });
@@ -152,6 +157,7 @@ $('#s-input').on('input', function (e) {
             hslFieldChanged();
             user.primaryColor = primaryColor;
             clearSelected();
+            updateResult();
         }
     }    
 });
@@ -161,6 +167,7 @@ $('#l-input').on('input', function (e) {
             hslFieldChanged();
             user.primaryColor = primaryColor;
             clearSelected();
+            updateResult();
         }
     }    
 });
@@ -202,6 +209,8 @@ function onClickShade(element){
         user.selectedShades.add(generateShadeHsl(element.children[0].innerHTML));
         console.log(user.selectedShades);
     }
+    updateResult();
+
 }
 function generateShadeHsl(hex) {
     let r = 0, g = 0, b = 0;
@@ -315,6 +324,7 @@ function onClickAlertShade(element) {
         user.selectedAlertColors.add(generateShadeHsl(element.children[0].innerHTML));
         console.log(user.selectedAlertColors);
     }
+    updateResult();
 }
 function removeAlertFromArray(i) {
     var newArr = [];
@@ -350,4 +360,51 @@ function showTextBgColors() {
     textColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedTextColor.hex+' ;"><p class="shade-value">'+user.selectedTextColor.hex+'</p></button>';
     var bgColorBlock = document.getElementById('bg-color');
     bgColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedBgColors.hex+' ;"><p class="shade-value">'+user.selectedBgColors.hex+'</p></button>';
+}
+
+function updateResult() {
+    primaryColorBox = document.getElementById('primary-color-box');
+    selectedAlertBox = document.getElementById('selected-alert-colors');
+    // display primary Color
+    primaryColorBox.style.backgroundColor = primaryColor.hex;
+    if(user.primaryColor.hex!=""){
+        var textColorBlock = document.getElementById('text-color-box');
+        textColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedTextColor.hex+' ;"><p class="shade-value">'+user.selectedTextColor.hex+'</p></button>';
+        var bgColorBlock = document.getElementById('bg-color-box');
+        bgColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedBgColors.hex+' ;"><p class="shade-value">'+user.selectedBgColors.hex+'</p></button>';
+    }    
+    if (user.selectedShades.size != 0) {
+        showResultShades();
+        // console.log("hello");
+    }
+    if (user.selectedAlertColors.size!=0) {
+        showResultAlertShades();
+        // console.log("hello");
+    }
+}
+
+function showResultShades() {
+    selectedShadesBox = document.getElementById('selected-shades');
+    var setOfShades = user.selectedShades;
+    var shadesHTML = '';
+    setOfShades.forEach(shade => {
+        shadesHTML += '<button class="shade-btn" style="background-color: ' + shade.hex + '">';
+        shadesHTML += '<p class="shade-value">' + shade.hex + '</p>';
+        shadesHTML += '</button>';
+    });
+    var shadeBlock = document.getElementById('selected-shades');
+    shadeBlock.innerHTML = shadesHTML;
+}
+
+function showResultAlertShades() {
+    selectedShadesBox = document.getElementById('selected-alert-colors');
+    var setOfShades = user.selectedAlertColors;
+    var shadesHTML = '';
+    setOfShades.forEach(shade => {
+        shadesHTML += '<button class="shade-btn" style="background-color: ' + shade.hex + '">';
+        shadesHTML += '<p class="shade-value">' + shade.hex + '</p>';
+        shadesHTML += '</button>';
+    });
+    var shadeBlock = selectedShadesBox;
+    shadeBlock.innerHTML = shadesHTML;
 }
