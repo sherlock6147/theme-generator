@@ -437,5 +437,14 @@ function showMsg() {
     copied.style.visibility = "visible";
     window.setTimeout(function () {
         copied.style.visibility = "hidden";
-    }, 2000);
+    }, 1000);
 }
+
+window.setInterval(function isHexEmpty() {
+    let content = document.getElementById('seperator');
+    if (hexInput.value.length<3) {
+        content.style.visibility = "hidden";
+    } else {
+        content.style.visibility = "visible";
+    }
+}, 500);
