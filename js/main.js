@@ -357,9 +357,9 @@ function clearSelected() {
 }
 function showTextBgColors() {
     var textColorBlock = document.getElementById('text-color');
-    textColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedTextColor.hex+' ;"><p class="shade-value">'+user.selectedTextColor.hex+'</p></button>';
+    textColorBlock.innerHTML = '<button class="shade-btn" onclick="copyColor(this)" style="border: 5px solid #4af;background-color:'+user.selectedTextColor.hex+' ;"><p class="shade-value">'+user.selectedTextColor.hex+'</p></button>';
     var bgColorBlock = document.getElementById('bg-color');
-    bgColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedBgColors.hex+' ;"><p class="shade-value">'+user.selectedBgColors.hex+'</p></button>';
+    bgColorBlock.innerHTML = '<button class="shade-btn" onclick="copyColor(this)" style="border: 5px solid #4af;background-color:'+user.selectedBgColors.hex+' ;"><p class="shade-value">'+user.selectedBgColors.hex+'</p></button>';
 }
 
 function updateResult() {
@@ -369,9 +369,9 @@ function updateResult() {
     primaryColorBox.style.backgroundColor = primaryColor.hex;
     if(user.primaryColor.hex!=""){
         var textColorBlock = document.getElementById('text-color-box');
-        textColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedTextColor.hex+' ;"><p class="shade-value">'+user.selectedTextColor.hex+'</p></button>';
+        textColorBlock.innerHTML = '<button class="shade-btn" onclick="copyColor(this)" style="border: 5px solid #4af;background-color:'+user.selectedTextColor.hex+' ;"><p class="shade-value">'+user.selectedTextColor.hex+'</p></button>';
         var bgColorBlock = document.getElementById('bg-color-box');
-        bgColorBlock.innerHTML = '<button class="shade-btn" style="border: 5px solid #4af;background-color:'+user.selectedBgColors.hex+' ;"><p class="shade-value">'+user.selectedBgColors.hex+'</p></button>';
+        bgColorBlock.innerHTML = '<button class="shade-btn" onclick="copyColor(this)" style="border: 5px solid #4af;background-color:'+user.selectedBgColors.hex+' ;"><p class="shade-value">'+user.selectedBgColors.hex+'</p></button>';
     }    
     if (user.selectedShades.size != 0) {
         showResultShades();
@@ -387,13 +387,17 @@ function showResultShades() {
     selectedShadesBox = document.getElementById('selected-shades');
     var setOfShades = user.selectedShades;
     var shadesHTML = '';
+    var scssString = '',count=0;
     setOfShades.forEach(shade => {
-        shadesHTML += '<button class="shade-btn" style="background-color: ' + shade.hex + '">';
+        ++count;
+        shadesHTML += '<button class="shade-btn" onclick="copyColor(this)" style="background-color: ' + shade.hex + '">';
         shadesHTML += '<p class="shade-value">' + shade.hex + '</p>';
         shadesHTML += '</button>';
+        scssString += 'shade-'+count.toString()+': '+shade.hex+';\n';
     });
     var shadeBlock = document.getElementById('selected-shades');
     shadeBlock.innerHTML = shadesHTML;
+    // updateScssString(scssString);
 }
 
 function showResultAlertShades() {
@@ -401,10 +405,37 @@ function showResultAlertShades() {
     var setOfShades = user.selectedAlertColors;
     var shadesHTML = '';
     setOfShades.forEach(shade => {
-        shadesHTML += '<button class="shade-btn" style="background-color: ' + shade.hex + '">';
+        shadesHTML += '<button class="shade-btn" onclick="copyColor(this)" style="background-color: ' + shade.hex + '">';
         shadesHTML += '<p class="shade-value">' + shade.hex + '</p>';
         shadesHTML += '</button>';
     });
     var shadeBlock = selectedShadesBox;
     shadeBlock.innerHTML = shadesHTML;
+}
+
+function copyColor(element) {
+    var text = element.children[0].innerText;
+    var elem = document.createElement("textarea");
+    document.body.appendChild(elem);
+    elem.value = text;
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+    console.log(text);
+    showMsg();
+}
+
+function updateScssString(str) {
+    let result = '{}';
+    result = '{\n' + str + '}\n';
+    var resultDiv = document.getElementById('final-result');
+    resultDiv.innerHTML = result;
+}
+
+function showMsg() {
+    var copied = document.getElementById('copied-msg');
+    copied.style.visibility = "visible";
+    window.setTimeout(function () {
+        copied.style.visibility = "hidden";
+    }, 2000);
 }

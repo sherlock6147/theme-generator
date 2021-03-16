@@ -16,6 +16,9 @@
             <li id="logo"><a href="color-converter.html">TG</a></li>
         </ul>
     </nav>
+    <div class="copied-msg" id="copied-msg">
+        Copied!
+    </div>
     <main>
     <section class="primary-color conversion-block">
         <div class="color-box flexible-box" id="color-box">
@@ -98,17 +101,22 @@
         </div>
     </section>
     <section class="text-bg-colors">
-        <h2>Text Color</h2>
-        <div class="shade-wrapper" id="text-color">
-<!-- 
-            <button class="shade-btn" style="background-color: ;">
-                <p class="shade-value"></p>
-            </button> -->
-        </div>
-        <h2>Background Color</h2>
-        <div class="shade-wrapper" id="bg-color">
+        <div class="box">
+            <h2>Text Color</h2>
+            <div class="shade-wrapper" id="text-color">
 
+                <!-- <button class="shade-btn" onclick="copyColor(this)" style="background-color: #efefef;">
+                    <p class="shade-value">#efefef</p>
+                </button> -->
+            </div>
         </div>
+        <div class="box">
+            <h2>Background Color</h2>
+            <div class="shade-wrapper" id="bg-color">
+
+            </div>
+        </div>
+        </section>
     </section>
     <section class="result">
         <h2>Result</h2>
@@ -128,6 +136,12 @@
                 <div id="bg-color-box"></div>
             </div>
         </div>
+        <!-- <div id="final-result">
+            {}
+        </div>
+        <button id="copy-final-result">
+
+        </button> -->
     </section>
     </main>
     <footer>

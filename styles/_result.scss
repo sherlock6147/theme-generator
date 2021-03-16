@@ -32,4 +32,27 @@
             align-self: center;
         }
     }
+    #final-result{
+        font-family: $body;
+        margin: 15px auto;
+        width: 50vw;
+        background-color:#ededed;
+        padding: 15px;
+        border-radius: 15px;
+        min-height: 15vh;
+    }
+}
+.copied-msg{
+    position: fixed;
+    top: 0;
+    right: 10px;
+    visibility: hidden;
+    margin: 15px;
+    background-color: #4af;
+    border-radius: 100px;
+    font-family: $body;
+    font-weight: 700;
+    color: #f5faff;
+    padding: 10px;
+    z-index: 100;
 }
